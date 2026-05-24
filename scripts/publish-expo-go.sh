@@ -36,15 +36,15 @@ echo "================================================================"
 echo "  Mise à jour OTA publiée (branche: main)"
 echo
 echo "  Tableau de bord :"
-echo "  https://expo.dev/accounts/myjantes/projects/jatek-mobile/updates"
+echo "  https://expo.dev/accounts/jatekapps/projects/jatekclient/updates"
 echo
 echo "  L'APK Preview reçoit cette mise à jour automatiquement"
 echo "  au prochain démarrage (canal 'main' configuré dans eas.json)."
 echo
 echo "  Pour ouvrir directement dans Expo Go (si APK Preview installé) :"
-echo "  exp://u.expo.dev/24f32081-ec5b-4040-9694-24e08de7e7c7?channel-name=main&runtime-version=exposdk%3A54.0.0"
+echo "  exp://u.expo.dev/e5622f86-143a-4096-b816-682cc02edc39?channel-name=main&runtime-version=exposdk%3A54.0.0"
 echo
-echo "  REMARQUE : exp.host/@myjantes/jatek-mobile est l'ancienne URL"
+echo "  REMARQUE : exp.host/@jatekapps/jatekclient est l'ancienne URL"
 echo "  Classic Updates (SDK < 49) — elle ne fonctionne plus avec EAS Update."
 echo "  Utilisez l'APK Preview pour distribuer l'app."
 echo "================================================================"

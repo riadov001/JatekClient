@@ -49,7 +49,7 @@ echo "  API : https://ma.jatek.app"
 echo "  Google Maps : depuis les EAS Secrets"
 echo
 echo "  Suivi du build :"
-echo "  https://expo.dev/accounts/myjantes/projects/jatek-mobile/builds"
+echo "  https://expo.dev/accounts/jatekapps/projects/jatekclient/builds"
 echo
 echo "  Une fois installé, l'APK reçoit automatiquement les mises"
 echo "  à jour OTA publiées via le workflow 'Publish to Expo Go (OTA)'."

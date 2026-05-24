@@ -115,6 +115,61 @@ const authLimiter = rateLimit({
 app.use("/api/auth", authLimiter);
 app.use("/api", apiLimiter);
 
+// ─── Mobile app download page ─────────────────────────────────────────────────
+const EXPO_UPDATE_URL =
+  "exp://u.expo.dev/e5622f86-143a-4096-b816-682cc02edc39?channel-name=main&runtime-version=exposdk%3A54.0.0";
+const EXPO_UPDATE_URL_ENCODED = encodeURIComponent(EXPO_UPDATE_URL);
+
+app.get("/mobile", (_req, res) => {
+  res.setHeader("Content-Type", "text/html; charset=utf-8");
+  res.send(`<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jatek — Application mobile</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#f5f5f5;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+    .card{background:#fff;border-radius:20px;padding:40px 32px;max-width:420px;width:100%;text-align:center;box-shadow:0 4px 24px rgba(0,0,0,.08)}
+    .logo{font-size:36px;font-weight:800;color:#e05c2a;letter-spacing:-1px;margin-bottom:4px}
+    .subtitle{color:#888;font-size:14px;margin-bottom:32px}
+    .qr-wrap{background:#f9f9f9;border-radius:16px;padding:20px;display:inline-block;margin-bottom:28px}
+    .qr-wrap img{display:block;width:200px;height:200px}
+    h2{font-size:18px;font-weight:700;margin-bottom:8px;color:#111}
+    .steps{text-align:left;background:#f9f9f9;border-radius:12px;padding:16px 20px;margin:20px 0;font-size:14px;color:#444;line-height:1.7}
+    .steps b{color:#111}
+    .btn{display:inline-block;background:#e05c2a;color:#fff;text-decoration:none;border-radius:12px;padding:14px 28px;font-size:16px;font-weight:700;margin-top:16px;width:100%}
+    .btn:active{opacity:.85}
+    .note{font-size:12px;color:#aaa;margin-top:20px;line-height:1.5}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">Jatek</div>
+    <div class="subtitle">Livraison à Oujda</div>
+
+    <div class="qr-wrap">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${EXPO_UPDATE_URL_ENCODED}" alt="QR Code Expo Go"/>
+    </div>
+
+    <h2>Ouvrir dans Expo Go</h2>
+
+    <div class="steps">
+      <b>1.</b> Installez <b>Expo Go</b> depuis l'App Store ou Google Play<br/>
+      <b>2.</b> Scannez le QR code ci-dessus<br/>
+      &nbsp;&nbsp;&nbsp;&nbsp;— ou —<br/>
+      <b>3.</b> Appuyez sur le bouton ci-dessous
+    </div>
+
+    <a class="btn" href="${EXPO_UPDATE_URL}">Ouvrir dans Expo Go</a>
+
+    <p class="note">Fonctionne avec Expo Go SDK 54.<br/>L'app se met à jour automatiquement.</p>
+  </div>
+</body>
+</html>`);
+});
+
 app.use((req, res, next) => {
   req.setTimeout(30_000);
   res.setTimeout(30_000);

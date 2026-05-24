@@ -1,18 +1,19 @@
 {
   "expo": {
     "name": "Jatek",
-    "slug": "jatek-mobile",
+    "slug": "jatekclient",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "jatek",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
+    "owner": "jatekapps",
     "runtimeVersion": {
       "policy": "sdkVersion"
     },
     "updates": {
-      "url": "https://u.expo.dev/24f32081-ec5b-4040-9694-24e08de7e7c7",
+      "url": "https://u.expo.dev/e5622f86-143a-4096-b816-682cc02edc39",
       "enabled": true,
       "fallbackToCacheTimeout": 0,
       "requestHeaders": {
@@ -36,7 +37,7 @@
     },
     "android": {
       "package": "ma.jatek.app",
-      "versionCode": 28,
+      "versionCode": 34,
       "permissions": [
         "android.permission.ACCESS_COARSE_LOCATION",
         "android.permission.ACCESS_FINE_LOCATION"
@@ -72,9 +73,8 @@
     },
     "extra": {
       "eas": {
-        "projectId": "24f32081-ec5b-4040-9694-24e08de7e7c7"
+        "projectId": "e5622f86-143a-4096-b816-682cc02edc39"
       }
-    },
-    "owner": "myjantes"
+    }
   }
 }
