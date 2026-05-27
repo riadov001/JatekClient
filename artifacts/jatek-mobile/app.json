@@ -37,7 +37,7 @@
     },
     "android": {
       "package": "ma.jatek.app",
-      "versionCode": 34,
+      "versionCode": 44,
       "permissions": [
         "android.permission.ACCESS_COARSE_LOCATION",
         "android.permission.ACCESS_FINE_LOCATION"
